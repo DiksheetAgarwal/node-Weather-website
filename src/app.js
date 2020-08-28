@@ -23,7 +23,7 @@ var forecast = require('./utilis/forecast');
 app.get('',(req,res)=>{
     res.render('index',{
         name: 'diksheet',
-        age : 19
+        age : 20
     })
 })
 app.get('/place', (req,res)=>{
