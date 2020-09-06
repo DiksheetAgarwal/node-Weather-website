@@ -22,39 +22,28 @@ var forecast = require('./utilis/forecast');
 
 app.get('',(req,res)=>{
     res.render('index',{
-        name: 'diksheet',
+        title: 'Weather',
+        name: 'User',
         age : 20
     })
 })
-app.get('/place', (req,res)=>{
-    res.render('place')
-})
+
 app.get('/help',(req,res)=>{
     res.render('help',{
+        title: 'Help',
         name: 'diksheet',
         place: 'guwhati'
     })
 })
-app.get('/products', (req,res)=>{
-    if(!req.query.address)
-    {
-        return res.send({
-            error :' error hai',
-        })
-    }
 
-    res.send({
-        products: [],
-    })
-})
 
 app.get('/about', (req,res)=>{
     res.render("about",{
-        place : 'guwsahati',
+        title: 'About',
+        place : 'guwahati',
         name: 'diksheet'
     });
 })
-
 app.get('/weather', (req,res)=>{
     if(!req.query.address)
      return res.send({error : 'plz give a location'})
@@ -73,21 +62,7 @@ app.get('/weather', (req,res)=>{
    })
    
 })
-// app.get("/products",(req,res)=>{
-//     // if(!req.query.address)
-//     // {
-//     //     return res.send({
-//     //         error: "you have an error",
-//     //     })
-//     // }
-//     console.log(req.query.search)
-//      res.render({
-//         products : [],
-//     })
-// })
-// app.get('/*', (req, res)=>{
-//     res.render('error');
-// })
+
 app.listen(3000, ()=>{
     console.log("server started 3000");
 })
