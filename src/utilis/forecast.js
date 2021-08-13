@@ -10,7 +10,7 @@ var forecast = (lattitude,longitude, callback) => {
         //   callback('no search results found', undefined);
 
           else{
-         callback(undefined,"the current temp is "+response.body.current.temperature + "  and humidity in percentage is " + response.body.current.humidity);
+         callback(undefined,"The current temp is "+response.body.current.temperature + "  and humidity in percentage is " + response.body.current.humidity);
           }
     })
 
