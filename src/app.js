@@ -10,6 +10,7 @@ var partialpath = path.join(__dirname,'../templates/partials');
 
 app.use(express.static(pathdir));
 
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'hbs');
 app.set('views', viewpath);
@@ -63,6 +64,6 @@ app.get('/weather', (req,res)=>{
    
 })
 
-app.listen(3000, ()=>{
-    console.log("server started 3000");
+app.listen(port, ()=>{
+    console.log("server started ", port);
 })
